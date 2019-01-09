@@ -19,11 +19,7 @@ addons:
   sonarcloud:
     organization: "doopz-github"
     token:
-      secure: kMeNzf0liVR6671U7GrH30tt4VIL3qlKBDLuZwuvbZTe+odE2A2YBiHp/J2HC9CGyhd9lybQ7v7USsSFknlf03eCUvFVRYdVpa6KhjxSP5bsK3+k00MWVM86hD9G1WrDK/Gtq8q
-rqLsb6K/6D+Zq92KcSi4Eb43aku2omUXxcWaTWch/8mM5HW+JAcX8yMfeEdrt6fWOg2naj8mst/LjDG7uupjTBuZDRYcVX6AhLGAJl+Eqj+ROJaJm57TErK9g5VTBGTLPsCFxUBtKrt7tzOF3CoFit
-stX1ZlDXxmA2ScMp8Ws+im6Qfu7F6Wr+Kdq4LH4ppwve1x1mb5Qz0BOoVPrIFeQhvRQy3omk4fKGjmY6y9vOGrPnkgUf1bvNV2R676udTDmewfGqP9P0VIxjzIczGhDDB8NlC87IyaoYBPgZc9rzYw
-e12GHmu7QX7M+PnmTAIQvwJC17FdKErQ1Q8/VbdCsniMFO5ElF/RUiIHvN+3Gv8bM5iHoCIG4OsaJypn2dI/DYRTCjYq/BYejOmcKgz3vPP1ctV7AMdU2qsz5eSOHYitZ91yIgINOkg61jgaGW6s0f
-rHCi4WClFlsFqREupDVraDk5sEmuLBhEMM0bUexMXF28NAVUfbQ6XwRUgCZm4KvuR5hY3c4EbSVLJ1yecrUEhU8UX9ybwT3akk=
+      secure: "kMeNzf0liVR6671U7GrH30tt4VIL3qlKBDLuZwuvbZTe+odE2A2YBiHp/J2HC9CGyhd9lybQ7v7USsSFknlf03eCUvFVRYdVpa6KhjxSP5bsK3+k00MWVM86hD9G1WrDK/Gtq8qrqLsb6K/6D+Zq92KcSi4Eb43aku2omUXxcWaTWch/8mM5HW+JAcX8yMfeEdrt6fWOg2naj8mst/LjDG7uupjTBuZDRYcVX6AhLGAJl+Eqj+ROJaJm57TErK9g5VTBGTLPsCFxUBtKrt7tzOF3CoFitstX1ZlDXxmA2ScMp8Ws+im6Qfu7F6Wr+Kdq4LH4ppwve1x1mb5Qz0BOoVPrIFeQhvRQy3omk4fKGjmY6y9vOGrPnkgUf1bvNV2R676udTDmewfGqP9P0VIxjzIczGhDDB8NlC87IyaoYBPgZc9rzYwe12GHmu7QX7M+PnmTAIQvwJC17FdKErQ1Q8/VbdCsniMFO5ElF/RUiIHvN+3Gv8bM5iHoCIG4OsaJypn2dI/DYRTCjYq/BYejOmcKgz3vPP1ctV7AMdU2qsz5eSOHYitZ91yIgINOkg61jgaGW6s0frHCi4WClFlsFqREupDVraDk5sEmuLBhEMM0bUexMXF28NAVUfbQ6XwRUgCZm4KvuR5hY3c4EbSVLJ1yecrUEhU8UX9ybwT3akk="
 script:
   - if [ "x$RAT" == "xtrue" ]; then (ant -quiet build-source-config && mkdir scratch && cd scratch && unzip -qq ../nbbuild/build/release-src* && ant -quiet rat -Drat-report.haltonfailure=true && cd .. && rm -rf scratch); fi
   - if [ "x$OPTS" == "x" ]; then OPTS="-quiet -Djavac.compilerargs=-nowarn -Dbuild.compiler.deprecation=false"; fi
